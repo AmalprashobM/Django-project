@@ -1,0 +1,40 @@
+{% extends "shopper/base.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+{% block main %}
+<div class="container">
+    <h1>Results for "{{ q }}"</h1>
+    <div class="container">
+ <div class="row">
+
+
+{% for i in items %}
+
+<div class="col-md-4">
+    <div class="product-item">
+        <div class="product-title">
+            <a href="/item/{{ i.1.item_id }}">{{i.1.name}}</a>
+            
+        </div>
+        <div class="product-image">
+            <a href="/item/{{ i.1.item_id }}">
+                <img src="{{i.0.img_url.url}}" alt="Product Image">
+            </a>
+            
+        </div>
+        <div class="product-price">
+            <h3><span>INR</span>{{i.1.price}}</h3>
+            <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+    {% if items.count == 0 %}
+        <h2>No results found, maybe try different one?</h2>
+    {% endif %}
+</div>
+</div>
+</div>
+{% endblock %}

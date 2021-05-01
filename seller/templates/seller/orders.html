@@ -1,0 +1,55 @@
+
+{% extends "seller/base.html" %}
+{% load static %}
+{% block title %}
+    Orders
+{% endblock %}
+
+{% block main %}
+
+
+<div class="container-fluid">
+               
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          
+          <th>Product id</th>
+          <th>Quantity</th>
+          <th>Date of order placed</th>
+          <th>Customer First Name</th>
+          <th>Customer Last Name</th>
+          <th>Mobile Number</th>
+          <th>Email Id</th>
+          <th>Address</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Pincode</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        {% for i in orders %}
+        <tr>
+          
+          <td>{{i.item_id}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.timestamp}}</td>
+          <td>{{i.firstname}}</td>
+          <td>{{i.lastname}}</td>
+          <td>{{i.mobile}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.address}}</td>
+          <td>{{i.state}}</td>
+          <td>{{i.city}}</td>
+          <td>{{i.pincode}}</td>
+          
+        </tr>
+        <tr>
+          
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% endblock %}

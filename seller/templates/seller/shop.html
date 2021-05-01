@@ -1,0 +1,41 @@
+{% extends "seller/base.html" %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+{% block main %}
+<div class="container">
+    <h1>Your Items</h1>
+    <div class="container">
+ <div class="row">
+
+
+{% for i in items %}
+
+<div class="col-md-4">
+    <div class="product-item">
+        <div class="product-title">
+            <a href="#">{{i.0.name}}</a>
+            
+        </div>
+        <div class="product-image">
+            <a href="#">
+                <img src="{{i.1.img_url.url}}" alt="Product Image">
+            </a>
+            <div>
+                <p>{{i.0.item_id}}</p>
+            </div>
+        </div>
+        <div class="product-price">
+            <h3><span>INR</span>{{i.0.price}}</h3>
+            
+        </div>
+        
+    </div>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+{% endblock %}

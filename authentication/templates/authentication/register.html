@@ -1,0 +1,82 @@
+{% extends 'authentication/base.html' %}
+{% block title %}
+Register
+{% endblock %}
+{% block main %}
+<style>
+  .note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+</style>
+<form method="POST">
+  {% csrf_token %}
+
+<div class="container register-form" style="margin-top: 30px;">
+  <div class="form">
+      <div class="note">
+          <p>Sign up with Eshopee and Explore the market from any where any time.</p>
+      </div>
+
+      <div class="form-content">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Your Name *" name="rname" />
+                  </div>
+                  <div class="form-group" style="margin-top: 10px;">
+                      <input type="text" class="form-control" placeholder="Phone Number *" name="rphone" />
+                  </div>
+                  <div class="form-group" style="margin-top: 10px;">
+                    <input type="email" class="form-control" placeholder="Email ID *"  name="rmail"/>
+                </div>
+              </div>
+              <div class="col-md-6" >
+                  <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Your Password *" name="rpswd"/>
+                  </div>
+                  
+                  <div class="form-check"style="margin-top: 10px;">
+                    <input class="form-check-input" type="radio" name="role" id="flexRadioDefault1" value="Seller">
+                    <label class="form-check-label" for="role">
+                      Seller
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="role" id="flexRadioDefault2" value=Buyer checked>
+                    <label class="form-check-label" for="role">
+                      Buyer
+                    </label>
+                  </div>
+              </div>
+          </div>
+          <button type="submit" class="btnSubmit" style="margin-top: 10px;">Submit</button>
+      </div>
+  </div>
+</div>
+</form>
+{% endblock %}

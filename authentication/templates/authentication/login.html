@@ -1,0 +1,70 @@
+{% extends 'authentication/base.html' %}
+{% block title %}
+Login page
+{% endblock %}
+{% block main %}
+<style>
+    body {
+  
+  -webkit-font-smoothing: antialiased;
+  font: normal 14px Roboto,arial,sans-serif;
+}
+
+.container {
+    padding: 25px;
+    position: fixed;
+}
+
+.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+h4 { 
+ border:0 solid #fff; 
+ border-bottom-width:1px;
+ padding-bottom:10px;
+ text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+</style>
+<form method="POST">
+    {% csrf_token %}
+<div>
+<div class="container" style="background-color:#fff;text-align: center;">
+    
+    <div class="row" style="height: 300px; margin-left: 300px;">
+        <div class="col-lg-8" style="width:800px;">
+            <div class="form-login" style="height:280px;width:100%;">
+            <h4>Welcome back.</h4>
+            <input type="email" id="userName" class="form-control input-sm chat-input" placeholder="User Mail Id" name="lmail" />
+            </br>
+            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" name="lpswd" />
+            </br>
+            <div class="wrapper">
+            <span class="group-btn"> 
+                <button type="submit" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button> 
+            </span>
+            </div>
+            </div>
+        
+        </div>
+    </div>
+</div>
+</div></form>
+{% endblock %}

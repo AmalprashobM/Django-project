@@ -1,0 +1,51 @@
+{% extends "seller/base.html" %}
+
+{% block title %}
+    View Item
+{% endblock %}
+
+{% block main %}
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+<h1>Item Info</h1>
+<ul>
+    <li>Item ID: {{ item.item_id }}</li>
+    <li>Item Name: {{ item.name }}</li>
+    <li>Item Price: ${{ item.price }}</li>
+    <li>Item Description: {{ item.discription }}</li>
+</ul>
+<div class="container"></div>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{imgs0.img_url.url}}" alt="Los Angeles">
+    </div>
+    {% for i in imgs %}
+    <div class="carousel-item">
+      <img src="{{i.img_url.url}}" alt="Chicago">
+    </div>
+    {% endfor %}
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon" style="color:brown">prev</span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon" style="color: brown;">Next</span>
+  </a>
+
+</div>
+</div>
+  
+
+{% endblock %}
+
